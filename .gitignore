@@ -3,8 +3,6 @@ index_files/
 .quarto/
 /.quarto/
 classification.qmd
-eda.qmd
-index.qmd
 requirements.txt
 **/*.quarto_ipynb
 Ex.data/
