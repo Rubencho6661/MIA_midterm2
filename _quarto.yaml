@@ -1,0 +1,16 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Machine Learning"
+  navbar:
+    left:
+      - href: midterm.qmd
+        text: Modelacion de balance de masa
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    fig-align: center

@@ -1,0 +1,11 @@
+.venv_2025SEM02_YT_ML/
+index_files/
+.quarto/
+/.quarto/
+classification.qmd
+eda.qmd
+index.qmd
+requirements.txt
+**/*.quarto_ipynb
+Ex.data/
+Ejercicio/
