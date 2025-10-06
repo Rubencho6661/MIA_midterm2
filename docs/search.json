@@ -32,7 +32,7 @@
     "href": "midterm.html#división-en-conjuntos-de-entrenamiento-y-prueba-train_test_split.",
     "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
     "section": "2. División en conjuntos de entrenamiento y prueba (train_test_split).",
-    "text": "2. División en conjuntos de entrenamiento y prueba (train_test_split).\nSe dividen los datos: - 80% para entrenar el modelo - 20% para evaluar su desempeño\n\n\nCode\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nprint(\"Tamaño entrenamiento:\", X_train.shape)\nprint(\"Tamaño prueba:\", X_test.shape)\n\n\nTamaño entrenamiento: (10196, 4)\nTamaño prueba: (2549, 4)"
+    "text": "2. División en conjuntos de entrenamiento y prueba (train_test_split).\nSe dividen los datos: - 80% para entrenar el modelo - 20% para evaluar su desempeño\n\n\nCode\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.3, random_state=42\n)\n\nprint(\"Tamaño entrenamiento:\", X_train.shape)\nprint(\"Tamaño prueba:\", X_test.shape)\n\n\nTamaño entrenamiento: (8921, 4)\nTamaño prueba: (3824, 4)"
   },
   {
     "objectID": "midterm.html#definición-y-entrenamiento-del-modelo-utilizando-pipeline.",
@@ -46,14 +46,14 @@
     "href": "midterm.html#generación-de-predicciones.",
     "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
     "section": "4. Generación de predicciones.",
-    "text": "4. Generación de predicciones.\n\n\nCode\ny_pred = pipe.predict(X_test)\ny_pred[:5]\n#y_prob = pipe.predict_proba(X_test)[:, 1]\n\n\narray([-0.03597007,  0.13780764,  0.20004948,  0.0872936 , -0.08477985])"
+    "text": "4. Generación de predicciones.\n\n\nCode\ny_pred = pipe.predict(X_test)\ny_pred[:5]\n#y_prob = pipe.predict_proba(X_test)[:, 1]\n\n\narray([-0.04770735,  0.13927089,  0.21075155,  0.07770748, -0.09311675])"
   },
   {
     "objectID": "midterm.html#evaluación-del-modelo-con-métricas-apropiadas.",
     "href": "midterm.html#evaluación-del-modelo-con-métricas-apropiadas.",
     "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
     "section": "5. Evaluación del modelo con métricas apropiadas.",
-    "text": "5. Evaluación del modelo con métricas apropiadas.\n\n\nCode\nmse = mean_squared_error(y_test, y_pred)\nr2 = r2_score(y_test, y_pred)\n\n\nEl Mean Squared Error (MSE) mide cuánto se desvían en promedio las predicciones de los valores reales. Un MSE de 0.22 significa que el error cuadrático medio entre los valores reales del balance de masa y los predichos por el modelo es aproximadamente 0.22 metros, siendo muy alto y poco eficiente. Entonces el modelo no está logrando capturar bien la relación entre las variables explicativas y la variable dependiente.\n\n\nCode\nprint(\"Mean Squared Error (MSE):\", mse)\n\n\nMean Squared Error (MSE): 0.2258102663878953\n\n\nEl R² mide la proporción de la variabilidad de la variable objetivo que logra explicar el modelo. Un R² = 0.14 india que el modelo solo explica aproximadamente el 14% de la variación de los datos. Asi, las variables explicativas actuales (aspecto, pendiente, elevación, rugosidad, etc.) no son suficientes para explicar el comportamiento del balance de masa.\n\n\nCode\nprint(\"R² Score:\", r2)\n\n\nR² Score: 0.1359237069525524"
+    "text": "5. Evaluación del modelo con métricas apropiadas.\n\n\nCode\nmse = mean_squared_error(y_test, y_pred)\nr2 = r2_score(y_test, y_pred)\n\n\nEl Mean Squared Error (MSE) mide cuánto se desvían en promedio las predicciones de los valores reales. Un MSE de 0.22 significa que el error cuadrático medio entre los valores reales del balance de masa y los predichos por el modelo es aproximadamente 0.22 metros, siendo muy alto y poco eficiente. Entonces el modelo no está logrando capturar bien la relación entre las variables explicativas y la variable dependiente.\n\n\nCode\nprint(\"Mean Squared Error (MSE):\", mse)\n\n\nMean Squared Error (MSE): 0.22894841340348443\n\n\nEl R² mide la proporción de la variabilidad de la variable objetivo que logra explicar el modelo. Un R² = 0.14 india que el modelo solo explica aproximadamente el 14% de la variación de los datos. Asi, las variables explicativas actuales (aspecto, pendiente, elevación, rugosidad, etc.) no son suficientes para explicar el comportamiento del balance de masa.\n\n\nCode\nprint(\"R² Score:\", r2)\n\n\nR² Score: 0.11863329007754908"
   },
   {
     "objectID": "midterm.html#visualizaciones-e-interpretación-de-resultados.",
