@@ -3906,6 +3906,10 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
+    <a class="nav-link" href="./index.qmd"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="./midterm.html" aria-current="page"> 
 <span class="menu-text">Modelacion de balance de masa</span></a>
   </li>  
@@ -3990,7 +3994,7 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 <section id="importando-librerias" class="level2">
 <h2 class="anchored" data-anchor-id="importando-librerias">0. Importando librerias</h2>
 <p>Se importan las librerias desde los paquetes</p>
-<div id="a164fc89" class="cell" data-execution_count="1">
+<div id="23fad32d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -4010,7 +4014,7 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 <section id="carga-y-exploración-inicial-del-dataset." class="level2">
 <h2 class="anchored" data-anchor-id="carga-y-exploración-inicial-del-dataset.">1. Carga y exploración inicial del dataset.</h2>
 <p>Se cargan los datos del archivo .csv, que proviene de una cobertura de puntos en formato shapefile.La tabla contiene atributos asociados a los balanves de masa.</p>
-<div id="08454914" class="cell" data-execution_count="2">
+<div id="255188af" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> gpd.read_file(<span class="st">&quot;ant_20222016_Dh_adjslp_pts.dbf&quot;</span>)</span>
@@ -4128,7 +4132,7 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 </div>
 </div>
 <p>Se identifican las variables con valores faltantes y se visualizan en un gráfico de barras. sto permite decidir si imputar valores o eliminar registros incompletos.</p>
-<div id="be37a3b8" class="cell" data-execution_count="3">
+<div id="5dd1d39c" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Porcentaje de valores faltantes por columna</span></span>
@@ -4174,7 +4178,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <p>La seleccion de seleccion de variables considera: VALUE: variable dependiente (0 = sin deslizamiento, 1 = con deslizamiento) features: variables explicativas derivadas del terreno o clima Se eliminan filas con valores faltantes.</p>
-<div id="299075a4" class="cell" data-execution_count="4">
+<div id="20d3f1b2" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La tercera columna (&#39;desliz_occ&#39;) es la variable dependiente (0 = no, 1 = sí)</span></span>
@@ -4399,7 +4403,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<div id="9b1a8305" class="cell" data-execution_count="5">
+<div id="826e4a20" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear subconjunto de datos</span></span>
@@ -4500,7 +4504,7 @@ memory usage: 497.9 KB</code></pre>
 </div>
 </div>
 <p>La matriz de correlacion permite identificar colinealidad entre variables explicativas. Valores altos (&gt;0.8 o &lt;−0.8) pueden indicar redundancia entre variables.</p>
-<div id="93135b81" class="cell" data-execution_count="6">
+<div id="b2b675ce" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Asegurar que solo se usen variables numéricas ---</span></span>
@@ -4532,7 +4536,7 @@ prec1 -0.047092  0.333880 -0.017936  1.000000</code></pre>
 <section id="división-en-conjuntos-de-entrenamiento-y-prueba-train_test_split." class="level2">
 <h2 class="anchored" data-anchor-id="división-en-conjuntos-de-entrenamiento-y-prueba-train_test_split.">2. División en conjuntos de entrenamiento y prueba (train_test_split).</h2>
 <p>Se dividen los datos: - 80% para entrenar el modelo - 20% para evaluar su desempeño</p>
-<div id="b01e594d" class="cell" data-execution_count="7">
+<div id="57c92dca" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
@@ -4557,7 +4561,7 @@ Tamaño prueba: (3824, 4)</code></pre>
 <li>Regresión logística: modelo lineal que estima la probabilidad de deslizamiento.</li>
 <li>class_weight=‘balanced’: ajusta el peso de las clases para evitar sesgo hacia la clase mayoritaria.</li>
 </ul>
-<div id="f24e7afa" class="cell" data-execution_count="8">
+<div id="0ad10415" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir pipeline: estandarización + regresión logística</span></span>
@@ -4587,7 +4591,7 @@ Tamaño prueba: (3824, 4)</code></pre>
 </section>
 <section id="generación-de-predicciones." class="level2">
 <h2 class="anchored" data-anchor-id="generación-de-predicciones.">4. Generación de predicciones.</h2>
-<div id="f4bbf328" class="cell" data-execution_count="9">
+<div id="78eba4d5" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> pipe.predict(X_test)</span>
@@ -4601,7 +4605,7 @@ Tamaño prueba: (3824, 4)</code></pre>
 </section>
 <section id="evaluación-del-modelo-con-métricas-apropiadas." class="level2">
 <h2 class="anchored" data-anchor-id="evaluación-del-modelo-con-métricas-apropiadas.">5. Evaluación del modelo con métricas apropiadas.</h2>
-<div id="77be1bb5" class="cell" data-execution_count="10">
+<div id="cb9bdf5f" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mse <span class="op">=</span> mean_squared_error(y_test, y_pred)</span>
@@ -4609,7 +4613,7 @@ Tamaño prueba: (3824, 4)</code></pre>
 </details>
 </div>
 <p>El <em>Mean Squared Error (MSE)</em> mide cuánto se desvían en promedio las predicciones de los valores reales. Un MSE de 0.22 significa que el error cuadrático medio entre los valores reales del balance de masa y los predichos por el modelo es aproximadamente 0.22 metros, siendo muy alto y poco eficiente. Entonces el modelo no está logrando capturar bien la relación entre las variables explicativas y la variable dependiente.</p>
-<div id="0a2dca86" class="cell" data-execution_count="11">
+<div id="03967e33" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Mean Squared Error (MSE):&quot;</span>, mse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4619,7 +4623,7 @@ Tamaño prueba: (3824, 4)</code></pre>
 </div>
 </div>
 <p>El <em>R²</em> mide la proporción de la variabilidad de la variable objetivo que logra explicar el modelo. Un R² = 0.14 india que el modelo solo explica aproximadamente el 14% de la variación de los datos. Asi, las variables explicativas actuales (aspecto, pendiente, elevación, rugosidad, etc.) no son suficientes para explicar el comportamiento del balance de masa.</p>
-<div id="505291d1" class="cell" data-execution_count="12">
+<div id="60a0b6b6" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;R² Score:&quot;</span>, r2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4632,7 +4636,7 @@ Tamaño prueba: (3824, 4)</code></pre>
 <section id="visualizaciones-e-interpretación-de-resultados." class="level2">
 <h2 class="anchored" data-anchor-id="visualizaciones-e-interpretación-de-resultados.">6. Visualizaciones e interpretación de resultados.</h2>
 <p>En la matriz de comfusion Diagonal principal → predicciones correctas. Fuera de la diagonal → errores del modelo.</p>
-<div id="df9d12eb" class="cell" data-execution_count="13">
+<div id="7c003682" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
