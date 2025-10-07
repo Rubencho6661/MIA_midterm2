@@ -9,12 +9,23 @@ execute:
   kernel: "Python (.venv)"
 ---
 
+## ¿Qué queremos modelar?
+
+Vamos a modelar la variacion de elevacion sobre una superficie terrestre. Este tipo de fenomenos ocurre debido a 
+deformaciones superficiales relacionadas al nivel freatico, morfologias promensas a movimientos en masa, undimientos superficiales, entre otros aspectos geologicos propios el sitio
+
+## Hipotesis
+
+Las deformaciones superficiales estan estrechamente relacionadas con parametros geologicos y climaticos
+
 ## ¿Qué es la regresión lineal simple?
 
 Es un método estadístico que se enfoca en analizar la relación lineal entre dos variables:
 
-- Una **variable independiente** X (por ejemplo: horas de estudio)
-- Una **variable dependiente** Y 
+- Una **variable independiente** X (Variacion de elevacion de la superficie con respecto al timpo dhdt)
+- Una **variable dependiente** Y (orientaciones de los flancos de las montanas 'asp1', rugosidad del terreno 'rgh1', morfologias topograficas 'tpi1', precipitaciones 'prec1')
+
+Se uso una base de datos propia construida a partir de modelos digitales de elevacion 
 
 El modelo tiene esta forma:
 

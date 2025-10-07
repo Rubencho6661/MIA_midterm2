@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
     "section": "",
-    "text": "Es un método estadístico que se enfoca en analizar la relación lineal entre dos variables:\n\nUna variable independiente X (por ejemplo: horas de estudio)\nUna variable dependiente Y\n\nEl modelo tiene esta forma:\nY = b0 + b1*X\nDonde:\n\nb0: es la intersección (intercepto). Es el valor de Y cuando X = 0.\n\nb1: es la pendiente de la recta, y representa cuánto cambia Y por cada unidad que aumenta X.\n\nQueremos encontrar una recta que se ajuste lo mejor posible a nuestros datos, es decir que exista una minima diferencia entre el valor real y lo predicho. Este es el criterio de mínimos cuadrados."
+    "text": "Vamos a modelar la variacion de elevacion sobre una superficie terrestre. Este tipo de fenomenos ocurre debido a deformaciones superficiales relacionadas al nivel freatico, morfologias promensas a movimientos en masa, undimientos superficiales, entre otros aspectos geologicos propios el sitio"
   },
   {
     "objectID": "index.html#qué-es-la-regresión-lineal-simple",
     "href": "index.html#qué-es-la-regresión-lineal-simple",
     "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
-    "section": "",
-    "text": "Es un método estadístico que se enfoca en analizar la relación lineal entre dos variables:\n\nUna variable independiente X (por ejemplo: horas de estudio)\nUna variable dependiente Y\n\nEl modelo tiene esta forma:\nY = b0 + b1*X\nDonde:\n\nb0: es la intersección (intercepto). Es el valor de Y cuando X = 0.\n\nb1: es la pendiente de la recta, y representa cuánto cambia Y por cada unidad que aumenta X.\n\nQueremos encontrar una recta que se ajuste lo mejor posible a nuestros datos, es decir que exista una minima diferencia entre el valor real y lo predicho. Este es el criterio de mínimos cuadrados."
+    "section": "¿Qué es la regresión lineal simple?",
+    "text": "¿Qué es la regresión lineal simple?\nEs un método estadístico que se enfoca en analizar la relación lineal entre dos variables:\n\nUna variable independiente X (Variacion de elevacion de la superficie con respecto al timpo dhdt)\nUna variable dependiente Y (orientaciones de los flancos de las montanas ‘asp1’, rugosidad del terreno ‘rgh1’, morfologias topograficas ‘tpi1’, precipitaciones ‘prec1’)\n\nSe uso una base de datos propia construida a partir de modelos digitales de elevacion\nEl modelo tiene esta forma:\nY = b0 + b1*X\nDonde:\n\nb0: es la intersección (intercepto). Es el valor de Y cuando X = 0.\n\nb1: es la pendiente de la recta, y representa cuánto cambia Y por cada unidad que aumenta X.\n\nQueremos encontrar una recta que se ajuste lo mejor posible a nuestros datos, es decir que exista una minima diferencia entre el valor real y lo predicho. Este es el criterio de mínimos cuadrados."
   },
   {
     "objectID": "index.html#importando-librerias",
@@ -61,5 +61,19 @@
     "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
     "section": "6. Visualizaciones e interpretación de resultados.",
     "text": "6. Visualizaciones e interpretación de resultados.\nEn la matriz de comfusion Diagonal principal → predicciones correctas. Fuera de la diagonal → errores del modelo.\n\n\nCode\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(8,6))\nplt.scatter(y_test, y_pred, alpha=0.7)\nplt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)\nplt.xlabel(\"Valores Reales\")\nplt.ylabel(\"Valores Predichos\")\nplt.title(\"Regresión Lineal: Valores Reales vs Predichos\")\nplt.show()"
+  },
+  {
+    "objectID": "index.html#qué-queremos-modelar",
+    "href": "index.html#qué-queremos-modelar",
+    "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
+    "section": "",
+    "text": "Vamos a modelar la variacion de elevacion sobre una superficie terrestre. Este tipo de fenomenos ocurre debido a deformaciones superficiales relacionadas al nivel freatico, morfologias promensas a movimientos en masa, undimientos superficiales, entre otros aspectos geologicos propios el sitio"
+  },
+  {
+    "objectID": "index.html#hipotesis",
+    "href": "index.html#hipotesis",
+    "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
+    "section": "Hipotesis",
+    "text": "Hipotesis\nLas deformaciones superficiales estan estrechamente relacionadas con parametros geologicos y climaticos"
   }
 ]
