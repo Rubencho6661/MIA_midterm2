@@ -7,6 +7,20 @@
     "text": "Vamos a modelar la variacion de elevacion sobre una superficie terrestre. Este tipo de fenomenos ocurre debido a deformaciones superficiales relacionadas al nivel freatico, morfologias promensas a movimientos en masa, undimientos superficiales, entre otros aspectos geologicos propios el sitio"
   },
   {
+    "objectID": "index.html#qué-queremos-modelar",
+    "href": "index.html#qué-queremos-modelar",
+    "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
+    "section": "",
+    "text": "Vamos a modelar la variacion de elevacion sobre una superficie terrestre. Este tipo de fenomenos ocurre debido a deformaciones superficiales relacionadas al nivel freatico, morfologias promensas a movimientos en masa, undimientos superficiales, entre otros aspectos geologicos propios el sitio"
+  },
+  {
+    "objectID": "index.html#hipotesis",
+    "href": "index.html#hipotesis",
+    "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
+    "section": "Hipotesis",
+    "text": "Hipotesis\nLas deformaciones superficiales estan estrechamente relacionadas con parametros geologicos y climaticos"
+  },
+  {
     "objectID": "index.html#qué-es-la-regresión-lineal-simple",
     "href": "index.html#qué-es-la-regresión-lineal-simple",
     "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
@@ -63,17 +77,17 @@
     "text": "6. Visualizaciones e interpretación de resultados.\nEn la matriz de comfusion Diagonal principal → predicciones correctas. Fuera de la diagonal → errores del modelo.\n\n\nCode\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(8,6))\nplt.scatter(y_test, y_pred, alpha=0.7)\nplt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)\nplt.xlabel(\"Valores Reales\")\nplt.ylabel(\"Valores Predichos\")\nplt.title(\"Regresión Lineal: Valores Reales vs Predichos\")\nplt.show()"
   },
   {
-    "objectID": "index.html#qué-queremos-modelar",
-    "href": "index.html#qué-queremos-modelar",
-    "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
+    "objectID": "Ejercicio/ant_20222016_Dh_adjslp_pts.html",
+    "href": "Ejercicio/ant_20222016_Dh_adjslp_pts.html",
+    "title": "Machine Learning",
     "section": "",
-    "text": "Vamos a modelar la variacion de elevacion sobre una superficie terrestre. Este tipo de fenomenos ocurre debido a deformaciones superficiales relacionadas al nivel freatico, morfologias promensas a movimientos en masa, undimientos superficiales, entre otros aspectos geologicos propios el sitio"
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     \n\n\n         0 0     false"
   },
   {
-    "objectID": "index.html#hipotesis",
-    "href": "index.html#hipotesis",
-    "title": "EVALUACION MIDTERM - Modelamiento de balance de masa",
-    "section": "Hipotesis",
-    "text": "Hipotesis\nLas deformaciones superficiales estan estrechamente relacionadas con parametros geologicos y climaticos"
+    "objectID": "Ejercicio/point_samples.html",
+    "href": "Ejercicio/point_samples.html",
+    "title": "Machine Learning",
+    "section": "",
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     \n\n\n         0 0     false"
   }
 ]
