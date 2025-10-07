@@ -1,5 +1,5 @@
 ---
-title: "EVALUACION MIDTERM - Modelamiento de balance de masa"
+title: "EVALUACION MIDTERM - Análisis de susceptibilidad a deslizamientos mediante regresión logística"
 author: "Ruben Basantes" 
 date: "2025-10-04"
 format:
